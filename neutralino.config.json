@@ -1,0 +1,50 @@
+{
+  "applicationId": "org.longui.twrppccontrol",
+  "version": "1.2.0 beta",
+  "defaultMode": "window",
+  "documentRoot": "/react-src/build/",
+  "url": "/",
+  "enableServer": true,
+  "enableNativeAPI": true,
+  "nativeAllowList": [
+    "app.*",
+    "filesystem.readDirectory",
+    "os.spawnProcess",
+    "os.writeProcessInput",
+    "os.killProcess",
+    "os.getSpawnedProcesses",
+    "os.getEnvs",
+    "os.execCommand"
+  ],
+  "modes": {
+    "window": {
+      "title": "TWRP-PC-Control",
+      "width": 420,
+      "height": 800,
+      "minWidth": 420,
+      "minHeight": 800,
+      "icon": "/react-src/src/assets/download.png",
+      "enableInspector": false,
+      "useSavedState": false
+    }
+  },
+  "cli": {
+    "binaryName": "TWRP-PC-Control_[1.2.0]",
+    "extensionsPath": "/extensions/",
+    "resourcesPath": "/react-src/build/",
+    "frontendLibrary": {
+      "patchFile": "/react-src/index.html",
+      "devUrl": "http://localhost:3000",
+      "projectPath": "/react-src/",
+      "initCommand": "pnpm install",
+      "devCommand": "pnpm run dev",
+      "buildCommand": "pnpm run build",
+      "waitTimeout": 20000
+    },
+    "binaryVersion": "6.3.0"
+  },
+  "logging": {
+    "enabled": false,
+    "writeToLogFile": false
+  }
+}
