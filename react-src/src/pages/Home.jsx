@@ -41,7 +41,7 @@ function Home() {
       </div>
       {!isRecovery && (
         <>
-          <div className="px-10 pt-30 text-center">
+          <div className="px-10 pt-10 text-center">
             <p>Need to boot into TWRP/OFOX,... to use TWRP PC Control</p>
             <br />
             <Button onClick={refreshCheckIsRecovery}>Refresh</Button>
