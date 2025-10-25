@@ -149,6 +149,26 @@ class Command {
         );
       }
 
+      const info3 = await os.execCommand(
+        `adb shell ls /dev/block/platform/11120000.ufs/by-name`,
+      );
+      if (info3.stdOut) {
+        const arr = info3.stdOut
+          .split("\n")
+          .map((item) => item.replace("\r", ""))
+          ?.filter((item) => item && !exclude.includes(item));
+
+        result = result.concat(
+          arr.map((item) => {
+            return {
+              path: "/dev/block/platform/11120000.ufs/by-name/" + item,
+              entry: item,
+              mountPoint: item,
+            };
+          }),
+        );
+      }
+
       // console.log(result);
       return result;
     } catch (e) {
